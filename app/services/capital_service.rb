@@ -12,8 +12,4 @@ class CountryService
   def random_country
     all_countries = get_url("/v3.1/all")
   end
-
-  def given_country(country)
-    get_url("/v3.1/name/#{country}")
-  end
 end

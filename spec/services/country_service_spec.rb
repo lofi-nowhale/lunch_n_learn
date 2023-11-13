@@ -13,5 +13,17 @@ RSpec.describe CountryService, type: :service do
       end
     end
   end
+
+  describe "#given_country" do
+    it "can pull a country from a users input" do
+      VCR.use_cassette("country_search_service") do
+        country = CountryService.new.given_country("france")
+
+        expect(country).to be_an Array
+        expect(country[0]).to have_key(:name)
+        expect(country[0]).to have_key(:capital)
+      end
+    end
+  end
 end
 

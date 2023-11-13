@@ -10,4 +10,10 @@ class CountryFacade
 
     country[:name][:common]
   end
+
+  def given_country(country)
+    data = @country.given_country(country)
+
+    country = Country.new(data.first)
+  end
 end
