@@ -7,6 +7,4 @@ class Country
     @lat = @latlng[0]
     @lon = @latlng[1]
   end
-
-
 end
