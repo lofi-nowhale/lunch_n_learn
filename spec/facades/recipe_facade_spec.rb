@@ -14,5 +14,18 @@ RSpec.describe RecipeFacade do
         expect(recipe.image).to be_a String
       end
     end
+
+    it "can return a list of recipes based on a randomly generated country" do
+      VCR.use_cassette("recipes_randomized_country") do
+        recipes_returned = RecipeFacade.new.recipe_search("random") 
+
+        recipe = recipes_returned[0]
+
+        expect(recipe.id).to eq(nil)
+        expect(recipe.title).to be_a String
+        expect(recipe.url).to be_a String
+        expect(recipe.image).to be_a String
+      end
+    end
   end
 end

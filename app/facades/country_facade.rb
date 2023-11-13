@@ -6,6 +6,8 @@ class CountryFacade
   def random_country
     response = @country.random_country
 
-    response[:name][:common]
+    country = response.sample
+
+    country[:name][:common]
   end
 end

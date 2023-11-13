@@ -10,9 +10,6 @@ class CountryService
   end
 
   def random_country
-    all_countries = get_url("/v3.1/all")    
-
-    country = all_countries.sample
-
+    all_countries = get_url("/v3.1/all")
   end
 end
