@@ -25,5 +25,17 @@ RSpec.describe CountryService, type: :service do
       end
     end
   end
+
+  # describe "#find_capital" do
+  #   it "can pull a capital of a country" do
+  #     VCR.use_cassette("find_capital_service") do
+  #       capital = CountryService.new.find_capital("france")
+
+  #       expect(capital).to be_an Array
+  #       expect(capital[0]).to have_key(:name)
+  #       expect(capital[0]).to have_key(:capital)
+  #     end
+  #   end
+  # end
 end
 

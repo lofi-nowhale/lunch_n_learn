@@ -16,4 +16,5 @@ class CountryService
   def given_country(country)
     get_url("/v3.1/name/#{country}")
   end
+
 end

@@ -17,7 +17,10 @@ RSpec.describe CountryFacade do
         country = CountryFacade.new.given_country("france")
 
         expect(country.name).to eq("France")       
-        expect(country.capital).to eq("Paris")       
+        expect(country.capital).to eq("Paris")
+        expect(country.latlng).to eq([48.87, 2.33])
+        expect(country.lon).to eq(2.33)
+        expect(country.lat).to eq(48.87)
       end
     end
   end
