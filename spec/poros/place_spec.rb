@@ -10,7 +10,7 @@ RSpec.describe Place do
 
         expect(place.name).to be_a String
         expect(place.address).to be_a String
-        expect(place.id).to be_a String
+        expect(place.place_id).to be_a String
       end
     end
   end
