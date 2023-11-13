@@ -23,8 +23,21 @@ RSpec.describe RecipeSerializer do
       expect(serialized_recipe[:data][:attributes]).to have_key(:url)
       expect(serialized_recipe[:data][:attributes]).to have_key(:country)
       expect(serialized_recipe[:data][:attributes]).to have_key(:image)
+    end
+  end
 
+  describe "empty country search NOT RANDOMIZED" do
+    it "returns an key of data pointing to an empty array" do
+      VCR.use_cassette("recipe_service_EMPTY_search") do
+        recipes_returned = RecipeFacade.new.recipe_search("")
 
+        serialized = RecipeSerializer.new(recipes_returned).serializable_hash
+
+        expect(serialized).to be_a Hash
+
+        expect(serialized).to have_key(:data)
+        expect(serialized[:data]).to eq([])
+      end
     end
   end
 end
