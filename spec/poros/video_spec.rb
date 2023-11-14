@@ -1,12 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe VideoFacade do
-  describe "#vids_by_country" do
-    it "returns a video related to that country" do
-      VCR.use_cassette("vids_by_country_facade") do
+RSpec.describe Video do
+  describe "#initialize" do
+    it "creates a video object" do
+      VCR.use_cassette("video_poro") do
         videos = VideoFacade.new.vids_by_country("laos")
-
-        expect(videos).to be_an Array
   
         video = videos.first
       
