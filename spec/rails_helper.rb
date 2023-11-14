@@ -76,4 +76,6 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data("<EDAMAM_API_APP_ID>") { Rails.application.credentials.edamam[:app_id] }
   config.filter_sensitive_data("<EDAMAM_API_KEY>") { Rails.application.credentials.edamam[:key] }
+  config.filter_sensitive_data("<YOUTUBE_API_KEY>") { Rails.application.credentials.youtube[:key] }
+  config.filter_sensitive_data("<UNSPLASH_API_KEY>") { Rails.application.credentials.unsplash[:key] }
 end
