@@ -49,6 +49,7 @@ RSpec.describe LearningResourceFacade do
           images = LearningResourceFacade.new.get_images("asdfasdf")
 
           expect(images).to be_an Array
+          expect(images).to eq([])
           expect(images.count).to eq 0
         end
       end
