@@ -19,8 +19,7 @@ RSpec.describe LearningResourceFacade do
       it "returns an empty hash if there are no videos for that specific country" do
         VCR.use_cassette("learning_resource_vids_sad") do
           video = LearningResourceFacade.new.get_video("fakecountry")
-
-          expect(video).to eq(nil)
+          expect(video).to eq({})
         end
       end
     end

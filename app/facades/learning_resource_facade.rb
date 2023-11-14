@@ -5,7 +5,7 @@ class LearningResourceFacade
 
   def get_video(country)
     videos = VideoService.new.vids_by_country(country)
-    if videos == nil
+    if videos[:items] == []
       {}
     else
       video = VideoFacade.new.vids_by_country(country)
