@@ -4,11 +4,7 @@ RSpec.describe VideoFacade do
   describe "#vids_by_country" do
     it "returns a video related to that country" do
       VCR.use_cassette("vids_by_country_facade") do
-        videos = VideoFacade.new.vids_by_country("laos")
-
-        expect(videos).to be_an Array
-  
-        video = videos.first
+        video = VideoFacade.new.vids_by_country("laos")
       
         expect(video.youtube_video_id).to be_a String
         expect(video.title).to be_a String
