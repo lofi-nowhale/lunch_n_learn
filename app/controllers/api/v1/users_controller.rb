@@ -1,18 +1,20 @@
 class Api::V1::UsersController < ApplicationController
   def create
     if params[:password] == params[:password_confirmation]
-      new_user = User.create!({
-        name: params["name"],
-        email: params["email"],
-        api_key: SecureRandom.base64
-      })
-      render json: UserSerializer.new(new_user), status 201
+      begin 
+        new_user = User.create!({
+          name: params["name"],
+          email: params["email"],
+          password: params["password"],
+          api_key: SecureRandom.urlsafe_base64
+        })
+        render json: UserSerializer.new(new_user), status: 201
+      rescue ActiveRecord::RecordInvalid => exception
+        render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 400)).serialize_json, status: 400
+      end 
     else
-
-
-      
+      render json: ErrorSerializer.new(ErrorMessage.new("Please check your password/password confirmation and try again.", 400)).serialize_json, status: 400    
     end
-    render json: UserSerializer.new(User.create(user_params))
   end
   
   private

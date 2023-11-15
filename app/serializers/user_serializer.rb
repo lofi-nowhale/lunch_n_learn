@@ -1,6 +1,6 @@
 class UserSerializer 
   include JSONAPI::Serializer
-    attributes :name, :email
+    attributes :name, :email, :api_key
   
     # set_type :recipes the serializer gem is going to set this automatically based on the object that its serializing
   
