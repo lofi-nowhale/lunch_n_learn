@@ -20,6 +20,6 @@ RSpec.describe "Learning Resources Request" do
     expect(resources[:data]).to have_key(:attributes)
     expect(resources[:data][:attributes]).to have_key(:country)
     expect(resources[:data][:attributes]).to have_key(:video)
-    expect(resources[:data][:attributes]).to have_key(:image)
+    expect(resources[:data][:attributes]).to have_key(:images)
   end
 end
