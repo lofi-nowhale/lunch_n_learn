@@ -1,4 +1,5 @@
 # Lunch n' Learn
+Created by: Noelle Hemphill | [LinkedIn](https://www.linkedin.com/in/noelle-hemphill/)
 
 > This application functions to search for cuisines by country, and provides opportunity to learn more about that country's culture. This app will allow users to search for recipes by country, favorite recipes, and learn more about a particular country.
 >
@@ -118,21 +119,15 @@ ___
 }
 
 ```
+___
 
+# External APIs Utilized and How to Run the test suite: 
+- [Edamam Recipe Search API](https://developer.edamam.com/edamam-recipe-api)
+- [Google Search List (Youtube) API](https://developers.google.com/youtube/v3/docs/search/list?apix_params=%7B%22part%22%3A%5B%22snippet%22%5D%2C%22channelId%22%3A%22UCluQ5yInbeAkkeCndNnUhpw%22%2C%22q%22%3A%22france%22%2C%22type%22%3A%5B%22video%22%5D%7D)
+- [Unsplash API](https://unsplash.com/documentation#getting-started)
 
-* System dependencies
+To run this test suite, please obtain API keys to the above APIs and add them to the Rails Credentials file using the 
+`EDITOR="code --wait" rails credentials:edit` command.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# lunch_n_learn
+Once those have been added, you can run the whole test suite with: 
+`bundle exec rspec` 
